@@ -60,6 +60,7 @@ function flipCard() {
 
 
 function createBoard() {
+
 	for (var i = 0; i < cards.length; i++) {
 		var cardElement = document.createElement("img");
 		cardElement.setAttribute("src", "images/back.png");
@@ -70,6 +71,21 @@ function createBoard() {
 };
 
 createBoard();
+
+
+//this function reset the game when the reset button is clicked
+function reset() {
+	cardsInPlay = [];
+
+	var gameBoard = document.getElementById("game-board");
+	gameBoard.innerHTML = "";
+
+	createBoard();
+}
+
+document.getElementById("reset").addEventListener("click", reset);
+
+reset();
 
 
 
